@@ -2,6 +2,10 @@ name: Build Android armv7 APP
 
 on:
   workflow_dispatch:
+    inputs:
+      upload-artifact:
+        type: boolean
+        default: true
   workflow_call:
     inputs:
       upload-artifact:
@@ -221,7 +225,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.apk
-          path: signed-apk/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}-debugkey.apk
+          path: signed-apk/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.apk
 
       - name: Publish signed apk package
         if: env.ANDROID_SIGNING_KEY != null && env.UPLOAD_ARTIFACT == 'true'
