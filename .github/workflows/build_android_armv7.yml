@@ -1,6 +1,7 @@
 name: Build Android armv7 APP
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       upload-artifact:
