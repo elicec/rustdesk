@@ -170,6 +170,8 @@ jobs:
               cp ./target/${{ matrix.job.target }}/release/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/armeabi-v7a/librustdesk.so
             ;;
           esac
+          pwd
+          find -name *.so
 
       - name: Build rustdesk
         shell: bash
