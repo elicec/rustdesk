@@ -74,7 +74,10 @@ jobs:
           cat /proc/cpuinfo
           cat /proc/meminfo
           df -h
-          sudo du -chd1 /
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
           sudo apt-get update
           sudo apt-get install -y \
                clang \
