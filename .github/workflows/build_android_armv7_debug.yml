@@ -7,8 +7,8 @@ on:
         type: boolean
         default: true
     push:
-        branches:
-          - dev
+      branches:
+        - dev
   workflow_call:
     inputs:
       upload-artifact:
