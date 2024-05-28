@@ -1,4 +1,4 @@
-name: Build Android armv7 APP
+name: Build Android armv7 APP DEBUG
 
 on:
   workflow_dispatch:
