@@ -6,6 +6,9 @@ on:
       upload-artifact:
         type: boolean
         default: true
+    push:
+        branches:
+          - dev
   workflow_call:
     inputs:
       upload-artifact:
@@ -165,6 +168,7 @@ jobs:
               cp ./target/${{ matrix.job.target }}/release/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/arm64-v8a/librustdesk.so
             ;;
             armv7-linux-androideabi)
+            chmod +x ./flutter/ndk_arm_debug.sh
               ./flutter/ndk_arm_debug.sh
               mkdir -p ./flutter/android/app/src/main/jniLibs/armeabi-v7a
               cp ./target/${{ matrix.job.target }}/release/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/armeabi-v7a/librustdesk.so
