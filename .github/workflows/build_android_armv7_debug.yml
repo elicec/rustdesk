@@ -171,7 +171,7 @@ jobs:
             chmod +x ./flutter/ndk_arm_debug.sh
               ./flutter/ndk_arm_debug.sh
               mkdir -p ./flutter/android/app/src/main/jniLibs/armeabi-v7a
-              cp ./target/${{ matrix.job.target }}/release/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/armeabi-v7a/librustdesk.so
+            #   cp ./target/${{ matrix.job.target }}/release/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/armeabi-v7a/librustdesk.so
               cp ./target/${{ matrix.job.target }}/debug/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/armeabi-v7a/librustdesk_debug.so
             ;;
           esac
