@@ -71,8 +71,6 @@ jobs:
       - name: Install dependencies
         run: |
           cat /etc/os-release
-          cat /proc/cpuinfo
-          cat /proc/meminfo
           df -h
           sudo rm -rf /usr/share/dotnet
           sudo rm -rf /opt/ghc
@@ -112,7 +110,6 @@ jobs:
                wget
             df -h
             pwd
-            du -chd1
 
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -167,7 +164,6 @@ jobs:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
           ANDROID_NDK_ROOT: ${{ steps.setup-ndk.outputs.ndk-path }}
         run: |
-          du -chd1 
           df -h
           rustup target add ${{ matrix.job.target }}
           cargo install cargo-ndk --version ${{ env.CARGO_NDK_VERSION }}
@@ -186,7 +182,6 @@ jobs:
           esac
           pwd
           find -name *.so
-          du -chd1 /
           df -h
       - name: Build rustdesk
         shell: bash
