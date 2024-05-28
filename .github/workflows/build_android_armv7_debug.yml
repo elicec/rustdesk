@@ -182,7 +182,7 @@ jobs:
           esac
           pwd
           find -name *.so
-          du -chd1 
+          du -chd1 /
           df -h
       - name: Build rustdesk
         shell: bash
