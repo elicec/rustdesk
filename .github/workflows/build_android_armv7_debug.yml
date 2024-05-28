@@ -73,6 +73,7 @@ jobs:
           cat /etc/os-release
           cat /proc/cpuinfo
           cat /proc/meminfo
+          df -h
           sudo apt-get update
           sudo apt-get install -y \
                clang \
@@ -105,6 +106,9 @@ jobs:
                pkg-config \
                tree \
                wget
+            df -h
+            pwd
+            du -chd1
 
       - name: Checkout source code
         uses: actions/checkout@v3
